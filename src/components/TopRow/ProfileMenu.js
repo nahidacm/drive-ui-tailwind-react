@@ -10,7 +10,7 @@ export default function ProfileMenu() {
     <>
       <Menu as="div" className="ml-3">
         <div>
-          <Menu.Button className="rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+          <Menu.Button className="rounded-full text-sm focus:outline-none">
             <span className="sr-only">Open user menu</span>
             <img
               className="rounded-full h-12"
