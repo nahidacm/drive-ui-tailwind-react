@@ -1,20 +1,21 @@
-import LeftColumn from "./components/LeftColumn/LeftColumn";
-import RightContentHeader from "./components/RightContent/RightContentHeader";
-import Suggested from "./components/RightContent/Suggested";
-import TopRow from "./components/TopRow/TopRow";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./pages/Layout";
+import MyDrive from "./pages/MyDrive";
+import SharedWithMe from "./pages/SharedWithMe";
+import NoPage from "./pages/NoPage";
 
 function App() {
   return (
-    <div className="container mx-auto">
-      <TopRow/>
-      <div className="flex">
-        <LeftColumn/>
-        <div className="flex-grow">
-          <RightContentHeader/>
-          <Suggested/>
-        </div>
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<MyDrive />} />
+          <Route path="shared-with-me" element={<SharedWithMe />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+    
   );
 }
 
